@@ -5,4 +5,5 @@ urlpatterns = [
     path('all/', views.todos_jogadores),
     path('update/', views.update_jogador),
     path('get/', views.get_jogador),
+    path('reset/', views.reset_jogador),
 ]

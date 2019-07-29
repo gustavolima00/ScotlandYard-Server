@@ -10,7 +10,7 @@ from rest_framework.status import (
 from django.contrib.auth.models import User
 from .models import Jogador
 from .serializers import JogadorSerializer
-from scotland.settings import *
+from scotland.settings import SECRET_KEY
 import jwt
 import requests
 
@@ -29,6 +29,31 @@ def get_jogador(request):
         jogador = make_jogador(jwt_token)
     except:
         return Response({'error':'Usuário não identificado'}, status=HTTP_403_FORBIDDEN)
+    serializer = JogadorSerializer(jogador)
+    return Response(data=serializer.data,status=HTTP_200_OK)
+
+@api_view(["POST"])
+def reset_jogador(request):
+    jwt_token = request.data.get('token')
+    try:
+        jogador = make_jogador(jwt_token)
+    except:
+        return Response({'error':'Usuário não identificado'}, status=HTTP_403_FORBIDDEN)
+    jogador.pista_banco=False
+    jogador.pista_bar=False
+    jogador.pista_penhores=False
+    jogador.pista_charutaria=False
+    jogador.pista_chaveiro=False
+    jogador.pista_docas=False
+    jogador.pista_carruagens=False
+    jogador.pista_farmacia=False
+    jogador.pista_hotel=False
+    jogador.pista_livraria=False
+    jogador.pista_museu=False
+    jogador.pista_parque=False
+    jogador.pista_syard=False
+    jogador.pista_teatro=False
+    jogador.save()
     serializer = JogadorSerializer(jogador)
     return Response(data=serializer.data,status=HTTP_200_OK)
 
@@ -85,7 +110,6 @@ def update_jogador(request):
         jogador.pista_syard=pista_syard
     if(pista_teatro):
         jogador.pista_teatro=pista_teatro
-
     jogador.save()
     serializer = JogadorSerializer(jogador)
     return Response(data=serializer.data,status=HTTP_200_OK)

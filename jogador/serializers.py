@@ -5,7 +5,6 @@ from rest_framework import serializers
 class UserSerializer(serializers.Serializer):
     id = serializers.ReadOnlyField()
     email = serializers.EmailField()
-    username = serializers.CharField()
 
 class JogadorSerializer(serializers.Serializer):
     id = serializers.ReadOnlyField()
