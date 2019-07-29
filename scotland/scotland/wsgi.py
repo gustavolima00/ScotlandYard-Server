@@ -1,5 +1,5 @@
 """
-WSGI config for ScotlandYard project.
+WSGI config for scotland project.
 
 It exposes the WSGI callable as a module-level variable named ``application``.
 
@@ -11,6 +11,6 @@ import os
 
 from django.core.wsgi import get_wsgi_application
 
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'ScotlandYard.settings')
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'scotland.settings')
 
 application = get_wsgi_application()
