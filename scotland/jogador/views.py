@@ -56,8 +56,10 @@ def update_jogador(request):
         return Response({'error':'Usuário não identificado'}, status=HTTP_403_FORBIDDEN)
 
     if(name):
-        profile.name=name
-        profile.save()
+        jogador.name=name
+        jogador.save()
+    serializer = JogadorSerializer(jogador)
+    return Response(data=serializer.data,status=HTTP_200_OK)
 
 def make_jogador(jwt_token):
     try:
