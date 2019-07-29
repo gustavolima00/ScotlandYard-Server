@@ -57,7 +57,36 @@ def update_jogador(request):
 
     if(name):
         jogador.name=name
-        jogador.save()
+    if(pista_banco):
+        jogador.pista_banco=pista_banco
+    if(pista_bar):
+        jogador.pista_bar=pista_bar
+    if(pista_penhores):
+        jogador.pista_penhores=pista_penhores
+    if(pista_charutaria):
+        jogador.pista_charutaria=pista_charutaria
+    if(pista_chaveiro):
+        jogador.pista_chaveiro=pista_chaveiro
+    if(pista_docas):
+        jogador.pista_docas=pista_docas
+    if(pista_carruagens):
+        jogador.pista_carruagens=pista_carruagens
+    if(pista_farmacia):
+        jogador.pista_farmacia=pista_farmacia
+    if(pista_hotel):
+        jogador.pista_hotel=pista_hotel
+    if(pista_livraria):
+        jogador.pista_livraria=pista_livraria
+    if(pista_museu):
+        jogador.pista_museu=pista_museu
+    if(pista_parque):
+        jogador.pista_parque=pista_parque
+    if(pista_syard):
+        jogador.pista_syard=pista_syard
+    if(pista_teatro):
+        jogador.pista_teatro=pista_teatro
+
+    jogador.save()
     serializer = JogadorSerializer(jogador)
     return Response(data=serializer.data,status=HTTP_200_OK)
 
