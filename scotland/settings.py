@@ -1,11 +1,6 @@
 import os
 import django_heroku
 from datetime import timedelta
-try:
-    from scotland.settings_secret import SECRET_KEY
-except ModuleNotFoundError:
-    SECRET_KEY = 'n&#tk0en*=zt%t(cdclx)+$vecg5a=)afkk=c^xy5d+x(su5c3'
-import dj_database_url
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -19,7 +14,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
-
+SECRET_KEY = 'n&#tk0en*=zt%t(cdclx)+$vecg5a=)afkk=c^xy5d+x(su5c3'
 ALLOWED_HOSTS = []
 
 
