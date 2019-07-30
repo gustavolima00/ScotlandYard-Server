@@ -1,1 +1,2 @@
-scotland/scotland/settings_secret.py
+scotland/settings_secret.py
+*/__pycache__

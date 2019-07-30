@@ -1,7 +1,10 @@
 import os
 import django_heroku
 from datetime import timedelta
-from scotland.settings_secret import *
+try:
+    from scotland.settings_secret import SECRET_KEY
+except FileNotFoundError:
+    SECRET_KEY = 'n&#tk0en*=zt%t(cdclx)+$vecg5a=)afkk=c^xy5d+x(su5c3'
 import dj_database_url
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -12,10 +15,10 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'n&#tk0en*=zt%t(cdclx)+$vecg5a=)afkk=c^xy5d+x(su5c3'
+
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = []
 
