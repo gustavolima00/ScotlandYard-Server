@@ -5,7 +5,7 @@ from sala.models import Sala
 
 class Jogador(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE, primary_key=True,)
-    sala_id = models.CharField(max_length=4, blank=True)
+    sala_id = models.CharField(max_length=10, blank=True)
     name = models.CharField(max_length=30, blank=True)
     pista_banco = models.BooleanField(default=False)
     pista_bar = models.BooleanField(default=False)

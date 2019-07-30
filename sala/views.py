@@ -26,10 +26,10 @@ def todas_salas(request):
 @api_view(["POST"])
 def criar_sala(request):
     jwt_token = request.data.get('token')
-    #try:
-    jogador = make_jogador(jwt_token)
-    #except:
-     #   return Response({'error':'Usuário não identificado'}, status=HTTP_403_FORBIDDEN)
+    try:
+        jogador = make_jogador(jwt_token)
+    except:
+        return Response({'error':'Usuário não identificado'}, status=HTTP_403_FORBIDDEN)
     salas = Sala.objects.filter(jogadores=0)
     try:
         sala = salas[0]
@@ -37,11 +37,25 @@ def criar_sala(request):
         sala = Sala()
     jogador.sala_id = sala.id
     jogador.save()
-    sala.jogadores = len(Jogador.objects.filter(sala_id=sala.id))
+    update(sala)
     sala.save()
     
-    serializer = JogadorSerializer(jogador)
+    serializer = SalaSerializer(sala)
     return Response(data=serializer.data,status=HTTP_200_OK)
 
-    
-# Create your views here.
+@api_view(["POST"])
+def sair_sala(request):
+    jwt_token = request.data.get('token')
+    try:
+        jogador = make_jogador(jwt_token)
+    except:
+        return Response({'error':'Usuário não identificado'}, status=HTTP_403_FORBIDDEN)
+    jogador.sala_id = None
+    jogador.save()
+    update(sala)
+    serializer = SalaSerializer(sala)
+    return Response(data=serializer.data,status=HTTP_200_OK)
+
+def update(sala):
+    sala.jogadores = len(Jogador.objects.filter(sala_id=sala.id))
+    sala.save()
