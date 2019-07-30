@@ -1,0 +1,72 @@
+{
+    "cases":[
+        {"id": "001",
+            "titulo": "O Homem Profano",
+            "descricao": "Sherlock Holmes e eu (Dr. Watson) ficamos sabendo pelos jornais matutinos de que a Scotland Yard estava às voltas com um novo caso. Lestrade que estava muito agitado chegou cedo à Baker Street. Ele veio nos dar detalhes do caso e conseguir algum conselho do meu amigo. Vou passar para vocês agora, a narração dos fatos:
+            “Um estranho pregador havia chegado à Londres de navio à alguns dias atrás. Ele trouxe de sua viagem uma grande Bíblia e com uma bonita encadernação marroquina. A duquesa de Lacourt acabou se encontrando com esse novo pregador e passou a apoiar as idéias dele. A partir disso, era de conhecimento de todos de que a duquesa, outrora uma grande benfeitora do Bispo de Whittenfronth, tinha desagradado ao Bispo e ao próprio duque de Lacourt.
+            A duquesa e o pregador, fãs da peça Hamlet, foram ao teatro ontem à noite para ver a apresentação. A duquesa durante o intervalo foi ao toalete e ao voltar ao camarote, se deparou com o corpo do pregador estirado no chão. A duquesa ficou desesperada e começou a gritar.
+            Imediatamente a Scotland Yard foi chamada. Chegando lá, descobri que o corpo havia sido perfurado por um objeto pontudo e comprido. A Bíblia do pregador não foi encontrada no camarote e a duquesa confirmou que estava com ele antes dele ser assassinado.
+            Ao lado do corpo encontrei um cigarro de uma marca alemã e uma caixinha de aspirinas. O grupo de teatro que apresentava a peça de Hamlet era do conhecido diretor Earl Akintern. Ele já namorou inclusive a filha da duquesa, a senhorita Kátia. Pelo que pude apurar a respeito desse relacionamento com a filha da Duquesa, ele a namorava por puro interesse.”
+            Ao terminar a narração do caso, Lestrade declarou que o principal suspeito do caso é o Bispo de Whittenfronth, que teria todas as razões para eliminar o Pregador. Holmes ficou estupefato e lhe perguntou sobre as pistas encontradas no camarote. Ele respondeu que as pistas encontradas lá serviam apenas para despistar os rumos corretos da investigação, já que o bispo as colocou com esse objetivo.
+            Holmes levantou e parabenizou Lestrade pelas suas incríveis e corretas deduções. Lestrade ficou muito agradecido e partiu no encalço do Bispo. Holmes ao fechar a porta, colocou a mão no queixo e disse para mim: “Esse caso me deixou muito curioso e eu vou investigá-lo à parte. Watson vamos sair, porque o jogo já começou”.
+            Holmes precisa saber a resposta para três perguntas e assim resolver esse caso misterioso, são elas:
+            a) Quem matou o Pregador?
+            b) Qual foi o motivo do crime?
+            c) Qual foi a arma do crime?
+            d) Qual foi realmente o objeto roubado?",
+            "pista_banco": "O gerente do banco informou que Earl Akintern possui um empréstimo em aberto e devendo a mais de 60 dias.",
+            "pista_bar": "O barman declarou que viu dois dias atrás o Pregador e o diretor Earl Akintern conversando.",
+            "pista_penhores": "Averiguamos que todas as pessoas envolvidas no caso, não possuem qualquer dívida com a Casa de Penhores.",
+            "pista_charutaria": "O vendedor informou que o Bispo de Whittenfronth é cliente deles e que costuma fumar cigarro alemão.",
+            "pista_chaveiro": "Obtemos a informação de que o Bispo de Whittenfronth fez recentemente duas cópias de uma chave e que disse ser de um armário pessoal.",
+            "pista_docas": "O fiscal da alfândega confirmou que o Pregador chegou de navio há cinco dias atrás. No registro de bordo, consta que o navio fez uma parada na ensolarada Riviera francesa.",
+            "pista_carruagens": "Um dos cocheiros de plantão na noite do crime, disse que levou um passageiro ao Teatro e que ao descer do cabriolé, deixou cair um objeto, parecido com uma pequena espada. Ele rapidamente abaixou e pegou-a, colocando debaixo do sobretudo.",
+            "pista_farmacia": "O farmacêutico informou que Earl Akintern tem dores de cabeça constantes. Toda a semana ele compra Aspirinas para combater essas dores.",
+            "pista_hotel": "Confirmamos que o Pregador ficou hospedado no Hotel desde que chegou à Londres.",
+            "pista_livraria": "O gerente comentou ao ser perguntado por Holmes sobre manuscritos raros, de que o manuscrito original de Hamlet havia sido roubado de uma exposição na Riviera francesa recentemente.",
+            "pista_museu": "O diretor do museu declarou que Earl Akintern além de ser diretor de teatro, é também um ótimo especialista em manuscritos originais.",
+            "pista_parque": "Um dos jardineiros do parque contou que viu conversando por um longo tempo, o Bispo de Whittenfronth e a duquesa Lacourt. Declarou ainda ainda que o Bispo aparentava estar irritado.",
+            "pista_syard": "Lestrade informou à Holmes que a vítima possuía uma cor bronzeada, o que não era comum em Londres. Disse também que o Bispo de Whittenfronth já foi encontrado e que o caso seria encerrado brevemente.",
+            "pista_teatro": "As informações coletadas dos funcionários indicaram que o Bispo de Whittenfronth estava no teatro na noite do crime.",
+            "solucao": "- O jogador ganhará 1 ponto por cada um desses locais visitados: Banco, Farmácia, Docas, Estação de Carruagens, Livraria,  Museu, e Scotland Yard.
+            - O jogador ganhará 5 pontos ao acertar cada pergunta abaixo e que esteja anotado na sua caderneta:
+            
+            a) Quem matou o Pregador?
+            Resposta: Earl Akintern
+            
+            b) Qual foi o motivo do crime?
+            Resposta: Earl Akintern tem uma divida com o Banco e roubou a “Bíblia” valiosa para levantar dinheiro (provando que visitou o Banco, o jogador recebe 5 pontos ou 2 pontos se não visitou).
+            
+            c) Qual foi a arma do crime?
+            Resposta: Uma pequena espada (provando que visitou a Estação de Carruagens, o jogador recebe 5 pontos ou 2 pontos se não visitou).
+            
+            d) Qual foi realmente o objeto roubado?
+            Resposta: Os manuscritos de Hamlet disfarçados numa Bíblia (provando que visitou a Livraria, o jogador recebe 5 pontos ou 2 pontos se não visitou).
+            
+            Holmes agora apresenta a solução do caso:
+            “O pregador era um ladrão e roubou o manuscrito de Hamlet durante sua estadia na Riviera francesa. Foi lá que ele obteve o seu tom bronzeado. Ele disfarçou o manuscrito como se fosse uma Bíblia e convenceu Akintern a autenticá-lo para o duque, que depois o compraria. Akintern, no entanto, estava em uma situação financeira desesperadora. Acabou por planejar matar o pregador com uma espada pequena e roubar o manuscrito. A espada foi vista pelo cocheiro que levou-o ao Teatro. Akintern que não fumava, colocou o cigarro alemão ao lado do corpo da vítima, para não suspeitarem dele e sim do Bispo. Para sua desgraça, ele deixou cair de seu bolso, sua caixa de aspirinas que tomava para as suas dores de cabeça e que me levou a deduzir que o assassino era sem sombra de dúvida, Earl Akintern”.
+            
+            "
+        },
+        {"id": "",
+            "titulo": "",
+            "descricao": "",
+            "pista_banco": "",
+            "pista_bar": "",
+            "pista_penhores": "",
+            "pista_charutaria": "",
+            "pista_chaveiro": "",
+            "pista_docas": "",
+            "pista_carruagens": "",
+            "pista_farmacia": "",
+            "pista_hotel": "",
+            "pista_livraria": "",
+            "pista_museu": "",
+            "pista_parque": "",
+            "pista_syard": "",
+            "pista_teatro": "",
+            "solucao": ""
+        }
+
+    ]
+}
