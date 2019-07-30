@@ -37,7 +37,8 @@ INSTALLED_APPS = [
     'allauth.account',
     'rest_auth.registration',
     'caso',
-    'jogador',   
+    'jogador',
+    'sala',
 ]
 SITE_ID = 1
 

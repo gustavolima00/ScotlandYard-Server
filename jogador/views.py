@@ -16,9 +16,7 @@ import requests
 
 @api_view(["GET"])
 def todos_jogadores(request):
-    print('aklalalal')
     jogadores = Jogador.objects.all()
-    print('jogadores: ', jogadores)
     serializer = JogadorSerializer(jogadores, many=True)
     return Response(data=serializer.data,status=HTTP_200_OK)
 
