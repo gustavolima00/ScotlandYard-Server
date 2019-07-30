@@ -125,6 +125,7 @@ WSGI_APPLICATION = 'scotland.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
+
 DATABASES = {
     'default': {
         'CONN_MAX_AGE': 500,
