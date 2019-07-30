@@ -15,7 +15,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'n&#tk0en*=zt%t(cdclx)+$vecg5a=)afkk=c^xy5d+x(su5c3'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = []
 
@@ -32,6 +32,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'rest_framework.authtoken',
     'rest_auth',
+    'django_filters',
     'django.contrib.sites',
     'allauth',
     'allauth.account',
@@ -91,6 +92,7 @@ REST_FRAMEWORK = {
         #'rest_framework.authentication.SessionAuthentication',
         'rest_framework.authentication.BasicAuthentication',
     ),
+    #'DEFAULT_FILTER_BACKENDS': ['django_filters.rest_framework.DjangoFilterBackend']
 }
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

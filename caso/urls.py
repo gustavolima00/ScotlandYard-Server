@@ -3,9 +3,9 @@ from . import views
 from rest_framework import routers
 
 router = routers.DefaultRouter()
-router.register(r'api', views.CasoViewSet)
+router.register(r'', views.CasoViewSet)
 
 urlpatterns = [
     path('', include(router.urls)),
-    path('api/', views.CasoViewSet),
+    path('', views.CasoViewSet),
 ]
