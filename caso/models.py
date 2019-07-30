@@ -1,6 +1,7 @@
 from django.db import models
 
 class Caso(models.Model):
+    id = models.CharField(max_length=10, primary_key=True)
     titulo = models.TextField()
     descricao = models.TextField()
 

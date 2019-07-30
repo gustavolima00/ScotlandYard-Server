@@ -4,5 +4,5 @@ from caso.serializers import CasoSerializer
 
 class SalaSerializer(serializers.Serializer):
     id = serializers.ReadOnlyField()
-    caso_id = serializers.IntegerField()
+    caso_id = serializers.CharField()
     jogadores = serializers.IntegerField()

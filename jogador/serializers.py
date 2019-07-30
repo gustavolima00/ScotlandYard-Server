@@ -9,7 +9,7 @@ class UserSerializer(serializers.Serializer):
 class JogadorSerializer(serializers.Serializer):
     id = serializers.ReadOnlyField()
     user = UserSerializer()
-    sala_id = serializers.IntegerField()
+    sala_id = serializers.CharField()
     name = serializers.CharField()
     pista_banco = serializers.BooleanField()
     pista_bar = serializers.BooleanField()
