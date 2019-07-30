@@ -3,7 +3,7 @@ import django_heroku
 from datetime import timedelta
 try:
     from scotland.settings_secret import SECRET_KEY
-except FileNotFoundError:
+except ModuleNotFoundError:
     SECRET_KEY = 'n&#tk0en*=zt%t(cdclx)+$vecg5a=)afkk=c^xy5d+x(su5c3'
 import dj_database_url
 
