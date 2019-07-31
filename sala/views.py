@@ -16,6 +16,7 @@ from jogador.views import make_jogador
 from jogador.models import Jogador
 from sala.models import Sala
 from sala.serializers import SalaSerializer
+from caso.models import Caso
 
 @api_view(["GET"])
 def todas_salas(request):
@@ -26,6 +27,7 @@ def todas_salas(request):
 @api_view(["POST"])
 def criar_sala(request):
     jwt_token = request.data.get('token')
+    caso_id = request.data.get('case_id')
     try:
         jogador = make_jogador(jwt_token)
     except:
@@ -35,8 +37,12 @@ def criar_sala(request):
         sala = salas[0]
     except IndexError:
         sala = Sala()
+    if(not caso_id):
+        return Response({'error':'Nenhum caso selecionado'}, status=HTTP_400_BAD_REQUEST)
     jogador.sala_id = sala.id
     jogador.save()
+    sala.caso_id = caso_id
+    sala.save()
     update(sala)
     sala.save()
     
