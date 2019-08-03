@@ -15,6 +15,8 @@ import requests
 from jogador.views import make_jogador
 from jogador.models import Jogador
 from sala.models import Sala
+from caso.models import Caso
+from caso.serializers import CasoSerializer
 from sala.serializers import SalaSerializer
 
 @api_view(["GET"])
@@ -26,17 +28,24 @@ def todas_salas(request):
 @api_view(["POST"])
 def criar_sala(request):
     jwt_token = request.data.get('token')
+    case_id = request.data.get('case_id')
     try:
         jogador = make_jogador(jwt_token)
     except:
         return Response({'error':'Usuário não identificado'}, status=HTTP_403_FORBIDDEN)
+    try:
+        caso = Caso.objects.get(id=case_id)
+    except Caso.DoesNotExist:
+        return Response({'error':'Erro ao encontrar o caso'}, status=HTTP_400_BAD_REQUEST)        
     salas = Sala.objects.filter(jogadores=0)
     try:
         sala = salas[0]
     except IndexError:
         sala = Sala()
+    
     jogador.sala_id = sala.id
     jogador.save()
+    sala.caso_id = caso.id
     update(sala)
     sala.save()
     
@@ -50,9 +59,6 @@ def sair_sala(request):
         jogador = make_jogador(jwt_token)
     except:
         return Response({'error':'Usuário não identificado'}, status=HTTP_403_FORBIDDEN)
-    if(not jogador.sala_id):
-        return Response({'error':'Jogador não está em uma sala'}, status=HTTP_400_BAD_REQUEST)
-
     sala = Sala.objects.get(id=jogador.sala_id)
     jogador.sala_id = ''
     jogador.save()
@@ -81,10 +87,29 @@ def entrar_sala(request):
 
 @api_view(["POST"])
 def jogadores_sala(request):
-    sala_id = request.data.get('id')
-    jogadores = Jogador.objects.filter(sala_id=sala.id)
+    jwt_token = request.data.get('token')
+    try:
+        jogador = make_jogador(jwt_token)
+    except:
+        return Response({'error':'Usuário não identificado'}, status=HTTP_403_FORBIDDEN)
+    jogadores = Jogador.objects.filter(sala_id=jogador.sala_id)
     serializer = JogadorSerializer(jogadores, many=True)
     return Response(data=serializer.data,status=HTTP_200_OK)
+
+@api_view(["POST"])
+def get_case(request):
+    jwt_token = request.data.get('token')
+    try:
+        jogador = make_jogador(jwt_token)
+    except:
+        return Response({'error':'Usuário não identificado'}, status=HTTP_403_FORBIDDEN)
+    if(not jogador.sala_id):
+        return Response({'error':'Jogador não está dentro de uma sala'}, status=HTTP_403_FORBIDDEN)
+    sala = Sala.objects.get(id=jogador.sala_id)
+    caso = Caso.objects.get(id=sala.caso_id)
+    serializer = CasoSerializer(caso)
+    return Response(data=serializer.data, status=HTTP_200_OK) 
+    
     
 @api_view(["POST"])
 def jogadores_local(request):
