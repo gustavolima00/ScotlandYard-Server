@@ -9,4 +9,5 @@ urlpatterns = [
     path('join/', views.entrar_sala),
     path('place/', views.jogadores_local),
     path('players/', views.jogadores_sala),
-]
+    path('get_log/', views.get_log),
+]   
