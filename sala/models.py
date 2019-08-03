@@ -9,7 +9,8 @@ def generate_key():
 
 class Sala(models.Model):
     id = models.CharField(max_length=10, primary_key=True, default=generate_key, editable=False)
-    caso_id = models.CharField(max_length=10 ,blank=True)
+    caso_id = models.CharField(max_length=10)
     jogadores = models.IntegerField(default=0)
+    log_actions = []
 # Create your models here.
 

@@ -8,5 +8,5 @@ class CasoViewSet(viewsets.ModelViewSet):
     queryset = Caso.objects.all()
     serializer_class = CasoSerializer
     filter_backends = [filters.SearchFilter]
-    search_fields = ['id', 'titulo']
+    search_fields = ['titulo']
 # Create your views here.
