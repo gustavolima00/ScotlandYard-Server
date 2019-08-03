@@ -36,7 +36,7 @@ def criar_sala(request):
     except:
         return Response({'error':'Usuário não identificado'}, status=HTTP_403_FORBIDDEN)
     try:
-        caso = Caso.objects.get(id=case_id)
+        caso = Caso.objects.get(id=int(case_id))
     except Caso.DoesNotExist:
         return Response({'error':'Erro ao encontrar o caso'}, status=HTTP_400_BAD_REQUEST)        
 
@@ -65,6 +65,20 @@ def sair_sala(request):
     except Sala.DoesNotExist:
         return Response({'error':'Usuário não está em uma sala'}, status=HTTP_403_FORBIDDEN)
     jogador.sala_id = ''
+    jogador.pista_banco=False
+    jogador.pista_bar=False
+    jogador.pista_penhores=False
+    jogador.pista_charutaria=False
+    jogador.pista_chaveiro=False
+    jogador.pista_docas=False
+    jogador.pista_carruagens=False
+    jogador.pista_farmacia=False
+    jogador.pista_hotel=False
+    jogador.pista_livraria=False
+    jogador.pista_museu=False
+    jogador.pista_parque=False
+    jogador.pista_syard=False
+    jogador.pista_teatro=False
     jogador.save()
     update(sala)
     serializer = SalaSerializer(sala)
