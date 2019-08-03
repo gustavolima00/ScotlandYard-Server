@@ -110,11 +110,10 @@ def update_hints(request):
 def update_jogador(request):
     jwt_token = request.data.get('token')
     name = request.data.get('name')
-    
-    try:
-        jogador = make_jogador(jwt_token)
-    except:
-        return Response({'error':'Usuário não identificado'}, status=HTTP_403_FORBIDDEN)
+    #try:
+    jogador = make_jogador(jwt_token)
+    #except:
+    #    return Response({'error':'Usuário não identificado'}, status=HTTP_403_FORBIDDEN)
     if(name):
         jogador.name=name
     jogador.save()
