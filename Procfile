@@ -1,1 +1,1 @@
-web: gunicorn scotland.wsgi
+web: gunicorn scotland.wsgi --log-file -
