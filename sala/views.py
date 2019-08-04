@@ -36,6 +36,8 @@ def criar_sala(request):
     except:
         return Response({'error':'Usuário não identificado'}, status=HTTP_403_FORBIDDEN)
     try:
+        if(not case_id):
+            return Response({'error':'Erro ao encontrar o caso'}, status=HTTP_400_BAD_REQUEST)
         caso = Caso.objects.get(id=int(case_id))
     except Caso.DoesNotExist:
         return Response({'error':'Erro ao encontrar o caso'}, status=HTTP_400_BAD_REQUEST)        
