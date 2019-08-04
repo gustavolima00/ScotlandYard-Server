@@ -90,15 +90,17 @@ def update_hints(request):
             status = request.data[hint_place]
         except:
             continue
-        setattr(jogador, hint_place, status)
+        
         print(status)
         jogador.save()
-        if(status==True):
+        if(str(status).lower()=='true'):
+            setattr(jogador, hint_place, True)
             action = Action()
             action.text = '{} desbloqueou a pista do(a) {}.'.format(jogador.name, place_name)
             action.room = sala
             action.save()
         else:
+            setattr(jogador, hint_place, False)
             action = Action()
             action.text = '{} bloqueou a pista do(a) {}.'.format(jogador.name, place_name)
             action.room = sala
