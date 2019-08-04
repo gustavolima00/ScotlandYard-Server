@@ -46,10 +46,6 @@ EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 REST_USE_JWT = True
 
-MIGRATION_MODULES = {       
-    'sites': 'contrib.sites.migrations'         
-}
-
 JWT_AUTH = {
     'JWT_ENCODE_HANDLER':
     'rest_framework_jwt.utils.jwt_encode_handler',
