@@ -98,7 +98,7 @@ def update_hints(request):
             action.room = sala
             action.save()
         else:
-            setattr(jogador, hint_place, False
+            setattr(jogador, hint_place, False)
             action = Action()
             action.text = '{} bloqueou a pista do(a) {}.'.format(jogador.name, place_name)
             action.room = sala
