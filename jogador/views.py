@@ -89,10 +89,8 @@ def update_hints(request):
         try:
             status = request.data[hint_place]
         except:
-            continue
-        
+            continue        
         print(status)
-        jogador.save()
         if(str(status).lower()=='true'):
             setattr(jogador, hint_place, True)
             action = Action()
@@ -100,11 +98,12 @@ def update_hints(request):
             action.room = sala
             action.save()
         else:
-            setattr(jogador, hint_place, False)
+            setattr(jogador, hint_place, False
             action = Action()
             action.text = '{} bloqueou a pista do(a) {}.'.format(jogador.name, place_name)
             action.room = sala
             action.save()
+    jogador.save()
     serializer = JogadorSerializer(jogador)
     return Response(data=serializer.data,status=HTTP_200_OK)
 
