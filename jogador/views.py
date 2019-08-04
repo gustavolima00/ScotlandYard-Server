@@ -93,7 +93,7 @@ def update_hints(request):
         setattr(jogador, hint_place, status)
         print(status)
         jogador.save()
-        if(status=='True'):
+        if(status==True):
             action = Action()
             action.text = '{} desbloqueou a pista do(a) {}.'.format(jogador.name, place_name)
             action.room = sala
