@@ -83,6 +83,10 @@ def sair_sala(request):
     jogador.pista_teatro=False
     jogador.save()
     update(sala)
+    action = Action()
+    action.text = '{} saiu da sala.'.format(jogador.name)
+    action.room = sala
+    action.save()
     serializer = SalaSerializer(sala)
     if(sala.jogadores==0):
         sala.delete()
