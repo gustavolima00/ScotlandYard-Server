@@ -1,5 +1,8 @@
-![](icon.png)
-# ScotlandYard Servidor
+<p align="center">
+<img src="icon.png" width="400"/>
+</p>
+
+# ScotlandYard - Servidor
 
 Servidor do app scotland yard, um jogo de tabuleiro jogado com o auxílio do app. 
 
