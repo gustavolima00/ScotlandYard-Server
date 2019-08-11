@@ -2,6 +2,8 @@
 <img src="icon.png" width="400"/>
 </p>
 
+## Wiki <https://gustavolima00.github.io/ScotlandYard/index.html> 
+
 # ScotlandYard - Servidor
 
 Servidor do app scotland yard, um jogo de tabuleiro jogado com o auxílio do app. 

@@ -10,4 +10,5 @@ urlpatterns = [
     path('place/', views.jogadores_local),
     path('players/', views.jogadores_sala),
     path('get_log/', views.get_log),
+    path('send_solution/', views.send_solution),
 ]   

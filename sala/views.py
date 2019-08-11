@@ -93,6 +93,44 @@ def sair_sala(request):
     return Response(data=serializer.data,status=HTTP_200_OK)
 
 @api_view(["POST"])
+def send_solution(request):
+    jwt_token = request.data.get('token')
+    solution = request.data.get('solution')
+    try:
+        jogador = make_jogador(jwt_token)
+    except:
+        return Response({'error':'Usuário não identificado'}, status=HTTP_403_FORBIDDEN)
+    try:
+        sala = Sala.objects.get(id=jogador.sala_id)
+    except Sala.DoesNotExist:
+        return Response({'error':'Usuário não está em uma sala'}, status=HTTP_403_FORBIDDEN)
+    jogador.sala_id = ''
+    jogador.pista_banco=False
+    jogador.pista_bar=False
+    jogador.pista_penhores=False
+    jogador.pista_charutaria=False
+    jogador.pista_chaveiro=False
+    jogador.pista_docas=False
+    jogador.pista_carruagens=False
+    jogador.pista_farmacia=False
+    jogador.pista_hotel=False
+    jogador.pista_livraria=False
+    jogador.pista_museu=False
+    jogador.pista_parque=False
+    jogador.pista_syard=False
+    jogador.pista_teatro=False
+    jogador.save()
+    update(sala)
+    action = Action()
+    action.text = '{} enviou uma solução para o caso:\n{}'.format(jogador.name, solution)
+    action.room = sala
+    action.save()
+    caso = Caso.objects.get(id=sala.caso_id)
+    if(sala.jogadores==0):
+        sala.delete()
+    return Response({'solution':caso.solucao},status=HTTP_200_OK)
+
+@api_view(["POST"])
 def entrar_sala(request):
     jwt_token = request.data.get('token')
     sala_id = request.data.get('id')
